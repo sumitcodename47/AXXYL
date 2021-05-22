@@ -3,14 +3,36 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './header/header.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { AmazingFeaturesComponent } from './amazing-features/amazing-features.component';
+import { DownloadComponent } from './download/download.component';
+import { FaqComponent } from './faq/faq.component';
+import { ScreenshotComponent } from './screenshot/screenshot.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    WelcomeComponent,
+    HowItWorksComponent,
+    AmazingFeaturesComponent,
+    DownloadComponent,
+    FaqComponent,
+    ScreenshotComponent,
+    ContactUsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

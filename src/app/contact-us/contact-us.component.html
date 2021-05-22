@@ -1,0 +1,78 @@
+<section class="section-white no-padding-bottom" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Get in touch</h4>
+        <p class="contact_success_box" style="display: none">
+          We received your message and you'll hear from us soon. Thank You!
+        </p>
+        <!--<form id="contact-form" class="contact" action="#" method="post">-->
+        <form
+          id="contact-form"
+          class="contact"
+          enctype="multipart/form-data"
+          method="post"
+          accept-charset="utf-8"
+          onsubmit="return validatenew();"
+          action="//ajex_contacts"
+        >
+          <div class="row">
+            <div class="col-md-4">
+              <input
+                class="contact-input white-input"
+                id="contact_names"
+                name="contact_names"
+                placeholder="Full Name*"
+                type="text"
+              />
+            </div>
+            <div class="col-md-4">
+              <input
+                class="contact-input white-input"
+                id="contact_email"
+                name="contact_email"
+                placeholder="Email Adress*"
+                type="email"
+              />
+            </div>
+            <div class="col-md-4">
+              <input
+                class="contact-input white-input"
+                id="contact_phone"
+                name="contact_phone"
+                placeholder="Phone Number*"
+                type="text"
+              />
+            </div>
+            <div class="col-md-12">
+              <textarea
+                class="contact-commnent white-input"
+                rows="2"
+                cols="20"
+                id="contact_message"
+                name="contact_message"
+                placeholder="Your Message..."
+              ></textarea>
+            </div>
+            <div class="col-md-12">
+              <input
+                value="Send Message"
+                onclick="validatenew();"
+                id="submit-button"
+                class="contact-submit"
+                type="button"
+              />
+            </div>
+            <span style="margin-left: 10px" id="MES"></span>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-12">
+        <p class="contact-info">
+          <i class="fa fa-envelope-o"></i>
+          <a href="mailto:info@axxyl.com">info@axxyl.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
