@@ -1,120 +1,53 @@
 <section class="section-lyla" id="gallery">
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h2 class="section-title white">Screenshot</h2>
-        <p class="section-subtitle white">
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority<br />
-          have suffered alteration, by injected humour, or new randomised words.
-        </p>
-      </div>
-      <div class="gallery-item-wrapper padding-top-30">
-        <div id="owl2" class="owl-carousel owl-theme">
-          <div>
-            <img
-              src="./assets/showcase1.jpeg"
-              alt="showcase"
-              class="gallery-show"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/showcase2.jpeg"
-              alt="showcase"
-              class="gallery-show"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/showcase3.jpeg"
-              alt="showcase"
-              class="gallery-show"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/showcase4.jpeg"
-              alt="showcase"
-              class="gallery-show"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/showcase5.jpeg"
-              alt="showcase"
-              class="gallery-show"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/showcase6.jpeg"
-              alt="showcase"
-              class="gallery-show"
-            />
+    <h2 class="section-title white">Screenshot</h2>
+    <p class="section-subtitle white">
+      There are many variations of passages of Lorem Ipsum available, but the
+      majority<br />
+      have suffered alteration, by injected humour, or new randomised words.
+    </p>
+  </div>
+  <div class="mr-4">
+    <p-carousel
+      [value]="slidesStore"
+      [autoplayInterval]="5000"
+      [circular]="false"
+      [showIndicators]="true"
+      [showNavigators]="false"
+      [numVisible]="4"
+      [numScroll]="1"
+      class="w-100"
+    >
+      <ng-template let-slide pTemplate="item" class="ml-5">
+        <div class="product-item">
+          <div class="product-item-content gallery-show">
+            <img [src]="slide.src" width="320px" />
           </div>
         </div>
-        <div class="owl-dots">
-          <div class="owl-dot active"><span></span></div>
-          <div class="owl-dot"><span></span></div>
-          <div class="owl-dot"><span></span></div>
-        </div>
-      </div>
-    </div>
+      </ng-template>
+    </p-carousel>
   </div>
 </section>
 <section class="section-white small-padding-bottom" id="features">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div id="owl1" class="owl-carousel owl-theme">
-          <div class="testim-inner">
-            <img
-              src="./assets/testimonial/1479905563-testi-03.jpg"
-              alt="testimonials"
-              class="testim-img"
-            />
-            <p>Very excellent application and the fares are accurate</p>
-            <!--<p>The attention of a traveller, should be particularly turned, in the first place, to the various works of Nature, to mark the distinctions of the climates he may explore, and to offer such useful observations on the different productions as may occur.</p>-->
-            <h6>Alex Rezvova<span class="job-text"> - </span></h6>
-          </div>
-          <div class="testim-inner">
-            <img
-              src="./assets/testimonial/1479989558-test-04.jpg"
-              alt="testimonials"
-              class="testim-img"
-            />
-            <p>At starting it was good and when I started using AXXYL</p>
-            <!--<p>The attention of a traveller, should be particularly turned, in the first place, to the various works of Nature, to mark the distinctions of the climates he may explore, and to offer such useful observations on the different productions as may occur.</p>-->
-            <h6>Albin Erlend<span class="job-text"> - </span></h6>
-          </div>
-          <div class="testim-inner">
-            <img
-              src="./assets/testimonial/1479905440-testi-02.jpg"
-              alt="testimonials"
-              class="testim-img"
-            />
-            <p>Best app for booking one way cab. Nice billing system.</p>
-            <!--<p>The attention of a traveller, should be particularly turned, in the first place, to the various works of Nature, to mark the distinctions of the climates he may explore, and to offer such useful observations on the different productions as may occur.</p>-->
-            <h6>Jacob Kai<span class="job-text"> - Indiana, USA</span></h6>
-          </div>
-          <div class="testim-inner">
-            <img
-              src="./assets/testimonial/1479989575-testi-01.jpg"
-              alt="testimonials"
-              class="testim-img"
-            />
-            <p>this is very easy to make book the cab so i like this app</p>
-            <!--<p>The attention of a traveller, should be particularly turned, in the first place, to the various works of Nature, to mark the distinctions of the climates he may explore, and to offer such useful observations on the different productions as may occur.</p>-->
-            <h6>Alex Rezvova<span class="job-text"> - New York, USA</span></h6>
-          </div>
-        </div>
-        <div class="owl-dots">
-          <div class="owl-dot active"><span></span></div>
-          <div class="owl-dot"><span></span></div>
-          <div class="owl-dot"><span></span></div>
-        </div>
-      </div>
+  <div class="container m-auto">
+    <div class="testim-inner">
+      <p-carousel
+        [value]="testimony"
+        [circular]="false"
+        [showIndicators]="true"
+        [showNavigators]="false"
+        [numVisible]="1"
+        [numScroll]="1"
+        class="w-100"
+      >
+        <ng-template let-slide pTemplate="item">
+          <img [src]="slide.src" />
+          <p>{{ slide.comment }}</p>
+          <h6>
+            {{ slide.name }}<span class="job-text"> - {{ slide.city }}</span>
+          </h6>
+        </ng-template>
+      </p-carousel>
     </div>
   </div>
 </section>

@@ -13,38 +13,80 @@
           enctype="multipart/form-data"
           method="post"
           accept-charset="utf-8"
-          onsubmit="return validatenew();"
-          action="//ajex_contacts"
+          novalidate
+          #contactUsForm="ngForm"
         >
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" style="height: 102px">
               <input
-                class="contact-input white-input"
+                class="contact-input white-input mb-0"
                 id="contact_names"
                 name="contact_names"
                 placeholder="Full Name*"
                 type="text"
+                ngModel
+                required
               />
+              <div class="text-danger mb-5 mt-2 ml-2">
+                <span
+                  *ngIf="
+                    contactUsForm.form.controls.contact_names?.invalid &&
+                    (contactUsForm.form.controls.contact_names?.dirty ||
+                      contactUsForm.form.controls.contact_names?.touched ||
+                      formSubmitted)
+                  "
+                >
+                  Full Name is required
+                </span>
+              </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" style="height: 102px">
               <input
-                class="contact-input white-input"
+                class="contact-input white-input mb-0"
                 id="contact_email"
                 name="contact_email"
-                placeholder="Email Adress*"
+                placeholder="Email Address*"
                 type="email"
+                ngModel
+                required
               />
+              <div class="text-danger mb-5 mt-2 ml-2">
+                <span
+                  *ngIf="
+                    contactUsForm.form.controls.contact_email?.invalid &&
+                    (contactUsForm.form.controls.contact_email?.dirty ||
+                      contactUsForm.form.controls.contact_email?.touched ||
+                      formSubmitted)
+                  "
+                >
+                  Email Address is required
+                </span>
+              </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" style="height: 102px">
               <input
-                class="contact-input white-input"
+                class="contact-input white-input mb-0"
                 id="contact_phone"
                 name="contact_phone"
                 placeholder="Phone Number*"
                 type="text"
+                ngModel
+                required
               />
+              <div class="text-danger mb-5 mt-2 ml-2">
+                <span
+                  *ngIf="
+                    contactUsForm.form.controls.contact_phone?.invalid &&
+                    (contactUsForm.form.controls.contact_phone?.dirty ||
+                      contactUsForm.form.controls.contact_phone?.touched ||
+                      formSubmitted)
+                  "
+                >
+                  Phone Number is required
+                </span>
+              </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12" style="height: 280px">
               <textarea
                 class="contact-commnent white-input"
                 rows="2"
@@ -52,16 +94,31 @@
                 id="contact_message"
                 name="contact_message"
                 placeholder="Your Message..."
+                ngModel
+                required
               ></textarea>
+              <div class="text-danger mb-5 mt-2 ml-2">
+                <span
+                  *ngIf="
+                    contactUsForm.form.controls.contact_message?.invalid &&
+                    (contactUsForm.form.controls.contact_message?.dirty ||
+                      contactUsForm.form.controls.contact_message?.touched ||
+                      formSubmitted)
+                  "
+                >
+                  Message is required
+                </span>
+              </div>
             </div>
             <div class="col-md-12">
-              <input
-                value="Send Message"
-                onclick="validatenew();"
+              <button
+                (click)="sendEmail(contactUsForm)"
                 id="submit-button"
                 class="contact-submit"
                 type="button"
-              />
+              >
+                Send Message
+              </button>
             </div>
             <span style="margin-left: 10px" id="MES"></span>
           </div>
