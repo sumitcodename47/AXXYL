@@ -1,15 +1,16 @@
-/* @font-face {
+@font-face {
   font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url("../fonts/fa-regular-400.eot");
-  src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/fa-regular-400.woff2") format("woff2"),
-    url("../fonts/fa-regular-400.woff") format("woff"),
-    url("../fonts/fa-regular-400.ttf") format("truetype"),
-    url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
-} */
+  src: url("./assets/fonts/fa-regular-400.eot");
+  src: url("./assets/fonts/fa-regular-400.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/fa-regular-400.woff2") format("woff2"),
+    url("./assets/fonts/fa-regular-400.woff") format("woff"),
+    url("./assets/fonts/fa-regular-400.ttf") format("truetype"),
+    url("./assets/fonts/fa-regular-400.svg#fontawesome") format("svg");
+}
 ul,
 ol {
   list-style: none;
@@ -583,7 +584,7 @@ ul.footer_social li {
   margin: 0;
   line-height: 100% !important;
 }
-ul.footer_social li a i {
+ul.footer_social li a fa-icon {
   display: inline-block;
   margin: 0 8px;
   padding: 0;
@@ -594,7 +595,7 @@ ul.footer_social li a i {
   -moz-transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
 }
-ul.footer_social li a i:hover {
+ul.footer_social li a fa-icon:hover {
   color: #4285f4;
 }
 /* ========================================================== */
@@ -605,7 +606,7 @@ ul.footer_social li a i:hover {
 
 .home-section {
   position: relative;
-  z-index: 999;
+  z-index: 998;
   overflow: hidden;
   position: relative;
   padding-top: 125px;
@@ -643,7 +644,7 @@ ul.home-benefits {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 ul.home-benefits li {
-  /* background: url("icon.png"); */
+  background: url("./assets/icon.png");
   background-repeat: no-repeat;
   padding-left: 40px;
   background-position: left bottom;
@@ -2175,7 +2176,7 @@ ul.partners-mentions li img:hover {
   background: -moz-linear-gradient(bottom right, #0061fd, #0061fd);
   background: linear-gradient(135deg, #0061fd 0%, #0061fd 100%);
 }
-.iner-head .navbar {
+.iner-head {
   background: #0061fd !important;
   position: relative !important;
 }

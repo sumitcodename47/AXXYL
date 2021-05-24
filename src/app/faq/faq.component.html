@@ -28,26 +28,24 @@
         >
           <!--begin panel-default -->
           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne12">
+            <div class="panel-heading" role="tab" id="heading1">
               <h4 class="panel-title">
                 <a
                   role="button"
-                  data-toggle="collapse"
-                  data-parent="#accordion"
-                  href="#collapseOne12"
-                  aria-expanded="true"
-                  aria-controls="collapseOne12"
+                  (click)="onExpand('collapse1')"
+                  [attr.aria-expanded]="this.selectedFAQ == 'collapse1'"
                 >
-                  <i class="fa fa-plus"></i> &nbsp; &nbsp; Will AXXYL Have
-                  airport service
+                  <fa-icon class="features_icons" [icon]="faPlus"></fa-icon>
+                  &nbsp; &nbsp; Will AXXYL Have airport service
                 </a>
               </h4>
             </div>
             <div
-              id="collapseOne12"
+              id="collapse1"
               class="panel-collapse collapse"
               role="tabpanel"
-              aria-labelledby="headingOne12"
+              #collapse1="ngbCollapse"
+              [ngbCollapse]="!(this.selectedFAQ == 'collapse1')"
             >
               <div class="panel-body">
                 <p>
@@ -63,22 +61,23 @@
               <h4 class="panel-title">
                 <a
                   role="button"
-                  data-toggle="collapse"
-                  data-parent="#accordion"
-                  href="#collapseOne16"
+                  (click)="onExpand('collapse2')"
+                  [attr.aria-expanded]="this.selectedFAQ == 'collapse2'"
                   aria-expanded="true"
                   aria-controls="collapseOne16"
                 >
-                  <i class="fa fa-plus"></i> &nbsp; &nbsp; Does AXXYL Have
-                  customer support contact info
+                  <fa-icon class="features_icons" [icon]="faPlus"></fa-icon>
+                  &nbsp; &nbsp; Does AXXYL Have customer support contact info
                 </a>
               </h4>
             </div>
             <div
-              id="collapseOne16"
+              id="collapseOne2"
               class="panel-collapse collapse"
               role="tabpanel"
-              aria-labelledby="headingOne16"
+              aria-labelledby="headingOne2"
+              #collapse2="ngbCollapse"
+              [ngbCollapse]="!(this.selectedFAQ == 'collapse2')"
             >
               <div class="panel-body">
                 <p>
@@ -93,14 +92,14 @@
               <h4 class="panel-title">
                 <a
                   role="button"
-                  data-toggle="collapse"
-                  data-parent="#accordion"
-                  href="#collapseOne17"
+                  (click)="onExpand('collapse3')"
+                  [attr.aria-expanded]="this.selectedFAQ == 'collapse3'"
                   aria-expanded="true"
                   aria-controls="collapseOne17"
                 >
-                  <i class="fa fa-plus"></i> &nbsp; &nbsp; Will AXXYL have
-                  service for people with wheels chairs
+                  <fa-icon class="features_icons" [icon]="faPlus"></fa-icon>
+                  &nbsp; &nbsp; Will AXXYL have service for people with wheels
+                  chairs
                 </a>
               </h4>
             </div>
@@ -109,6 +108,8 @@
               class="panel-collapse collapse"
               role="tabpanel"
               aria-labelledby="headingOne17"
+              #collapse3="ngbCollapse"
+              [ngbCollapse]="!(this.selectedFAQ == 'collapse3')"
             >
               <div class="panel-body">
                 <p>
@@ -128,14 +129,14 @@
               <h4 class="panel-title">
                 <a
                   role="button"
-                  data-toggle="collapse"
-                  data-parent="#accordion"
-                  href="#collapseOne18"
+                  (click)="onExpand('collapse4')"
+                  [attr.aria-expanded]="this.selectedFAQ == 'collapse4'"
                   aria-expanded="true"
                   aria-controls="collapseOne18"
                 >
-                  <i class="fa fa-plus"></i> &nbsp; &nbsp; Will AXXYL have back
-                  round checks for the drivers
+                  <fa-icon class="features_icons" [icon]="faPlus"></fa-icon>
+                  &nbsp; &nbsp; Will AXXYL have back round checks for the
+                  drivers
                 </a>
               </h4>
             </div>
@@ -144,6 +145,8 @@
               class="panel-collapse collapse"
               role="tabpanel"
               aria-labelledby="headingOne18"
+              #collapse4="ngbCollapse"
+              [ngbCollapse]="!(this.selectedFAQ == 'collapse4')"
             >
               <div class="panel-body">
                 <p>
@@ -174,14 +177,13 @@
               <h4 class="panel-title">
                 <a
                   role="button"
-                  data-toggle="collapse"
-                  data-parent="#accordion"
-                  href="#collapseOne19"
+                  (click)="onExpand('collapse5')"
+                  [attr.aria-expanded]="this.selectedFAQ == 'collapse5'"
                   aria-expanded="true"
                   aria-controls="collapseOne19"
                 >
-                  <i class="fa fa-plus"></i> &nbsp; &nbsp; (DRIVER)Can I get a
-                  refund of my monthly fee:
+                  <fa-icon class="features_icons" [icon]="faPlus"></fa-icon>
+                  &nbsp; &nbsp; (DRIVER)Can I get a refund of my monthly fee:
                 </a>
               </h4>
             </div>
@@ -190,6 +192,8 @@
               class="panel-collapse collapse"
               role="tabpanel"
               aria-labelledby="headingOne19"
+              #collapse5="ngbCollapse"
+              [ngbCollapse]="!(this.selectedFAQ == 'collapse5')"
             >
               <div class="panel-body">
                 <p>
