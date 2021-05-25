@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {}
   ngAfterViewInit() {
-    if (window.location.href.indexOf('pages/taxes') > -1) {
+    if (window.location.href.indexOf('pages') > -1) {
       this.renderer.addClass(this.nav.nativeElement, 'iner-head');
     } else {
       this.renderer.listen(window, 'scroll', ($event) => {
