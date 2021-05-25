@@ -2,7 +2,7 @@ import {
   Component,
   ElementRef,
   OnInit,
-  AfterViewChecked,
+  AfterViewInit,
   Renderer2,
   ViewChild,
 } from '@angular/core';
@@ -12,13 +12,13 @@ import {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
   public isMenuCollapsed = true;
   @ViewChild('nav', { static: false }) nav!: ElementRef;
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {}
-  ngAfterViewChecked() {
+  ngAfterViewInit() {
     if (window.location.href.indexOf('pages/taxes') > -1) {
       this.renderer.addClass(this.nav.nativeElement, 'iner-head');
     } else {

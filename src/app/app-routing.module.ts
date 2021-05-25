@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeesTaxesComponent } from './fees-taxes/fees-taxes.component';
+import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'pages/taxes',
     component: FeesTaxesComponent,
+  },
+  {
+    path: 'pages/registration',
+    component: RegisterComponent,
   },
   {
     path: '**',

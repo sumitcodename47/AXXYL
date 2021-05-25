@@ -11,6 +11,35 @@
     url("./assets/fonts/fa-regular-400.ttf") format("truetype"),
     url("./assets/fonts/fa-regular-400.svg#fontawesome") format("svg");
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.close-cust {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: none !important;
+}
+
+.close-cust:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+
 ul,
 ol {
   list-style: none;
@@ -2304,8 +2333,8 @@ ul.partners-mentions li img:hover {
   .navbar-fixed-top .navbar-nav {
     background-color: #fff;
   }
-  .navbar-fixed-top .navbar-nav > li > a:hover {
-  }
+  /* .navbar-fixed-top .navbar-nav > li > a:hover {
+  } */
   .navbar-nav > li:last-child a {
     padding: 10px 10px !important;
   }
@@ -2413,8 +2442,8 @@ ul.partners-mentions li img:hover {
   font-family: "Cabin", sans-serif;
   font-weight: 700;
 }
-.nav.navbar-nav.navbar-right.show {
-}
+/* .nav.navbar-nav.navbar-right.show {
+} */
 .top-register {
   color: #0061fd;
   font-size: 14px;

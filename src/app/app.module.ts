@@ -21,6 +21,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FeesTaxesComponent } from './fees-taxes/fees-taxes.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
+import { DialogComponent } from './register/dialog/dialog.component';
+import { DialogPassengerComponent } from './register/dialog-passenger/dialog-passenger.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FeesTaxesComponent,
     PageNotFoundComponent,
     DashboardComponent,
+    RegisterComponent,
+    DialogComponent,
+    DialogPassengerComponent,
   ],
   imports: [
     BrowserModule,

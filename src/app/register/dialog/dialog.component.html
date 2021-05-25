@@ -1,0 +1,132 @@
+<div id="Driver">
+  <div>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Create an Account as Driver Profile.</h4>
+        <span class="close-cust" (click)="modal.dismiss()"> &times; </span>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="DFname"
+                  placeholder="Enter First Name"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="DLname"
+                  placeholder="Enter Last Name"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="Demail"
+                  placeholder="Enter Enter email"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Dphone"
+                  placeholder="Enter Phone Number"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="Dpassword"
+                  placeholder="Enter Confirm Password"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="DCpassword"
+                  placeholder="Enter Password"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Vehicle">Vehicle Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="VehicleNumber"
+                  placeholder="Enter Vehicle Number"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="Vehicle">Select Car</label>
+
+                <div class="input select">
+                  <select
+                    name="data[category_id]"
+                    id="car_type"
+                    class="form-control"
+                  >
+                    <option value="">select Car Type</option>
+                    <option value="22">AXS</option>
+                    <option value="23">AXM</option>
+                    <option value="24">AXL</option>
+                    <option value="25">AXC</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="checkbox" class="form-control1" id="dCHECKBOX" />
+                You agree to our
+                <a href="/pages/termandcondition">Terms & Conditions</a>,
+                <a href="/pages/privacypolicy" traget="_blank">Privacy Policy</a
+                >.
+              </div>
+            </div>
+            <!--<div class="col-md-12">Monthly Fee: $<span id="fee-amunt"></span></div>-->
+            <button
+              type="button"
+              onclick="driverregistration();"
+              class="btn btn-primary"
+            >
+              Sign up Now!
+            </button>
+            <span style="margin-left: 10px" id="DMES"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
