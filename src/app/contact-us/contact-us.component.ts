@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ContactUsComponent implements OnInit {
   formSubmitted = false;
+  fieldPattern = new RegExp(/^[^ ]+(?: +[^ ]+)*$/);
   constructor() {}
 
   ngOnInit(): void {}

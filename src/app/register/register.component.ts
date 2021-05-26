@@ -15,12 +15,16 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   openDriver() {
-    const modalRef = this.modalService.open(DialogComponent);
+    const modalRef = this.modalService.open(DialogComponent, {
+      size: 'lg',
+    });
     modalRef.componentInstance.name = 'World';
   }
 
   openPassenger() {
-    const modalRef = this.modalService.open(DialogPassengerComponent);
+    const modalRef = this.modalService.open(DialogPassengerComponent, {
+      size: 'lg',
+    });
     modalRef.componentInstance.name = 'World';
   }
 }

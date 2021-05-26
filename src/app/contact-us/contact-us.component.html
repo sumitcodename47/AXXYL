@@ -11,7 +11,6 @@
           id="contact-form"
           class="contact"
           enctype="multipart/form-data"
-          method="post"
           accept-charset="utf-8"
           novalidate
           #contactUsForm="ngForm"
@@ -26,6 +25,7 @@
                 type="text"
                 ngModel
                 required
+                [pattern]="fieldPattern"
               />
               <div class="text-danger mb-5 mt-2 ml-2">
                 <span
@@ -36,7 +36,21 @@
                       formSubmitted)
                   "
                 >
-                  Full Name is required
+                  <span
+                    *ngIf="
+                      contactUsForm.form.controls.contact_names?.errors
+                        ?.required
+                    "
+                  >
+                    Please Enter the name
+                  </span>
+                  <span
+                    *ngIf="
+                      contactUsForm.form.controls.contact_names?.errors?.pattern
+                    "
+                  >
+                    Full Name is invalid
+                  </span>
                 </span>
               </div>
             </div>
@@ -59,7 +73,21 @@
                       formSubmitted)
                   "
                 >
-                  Email Address is required
+                  <span
+                    *ngIf="
+                      contactUsForm.form.controls.contact_email?.errors
+                        ?.required
+                    "
+                  >
+                    Please enter the email address
+                  </span>
+                  <span
+                    *ngIf="
+                      contactUsForm.form.controls.contact_email?.errors?.pattern
+                    "
+                  >
+                    Email Address is invalid
+                  </span>
                 </span>
               </div>
             </div>
@@ -72,6 +100,7 @@
                 type="text"
                 ngModel
                 required
+                pattern="[0-9]+"
               />
               <div class="text-danger mb-5 mt-2 ml-2">
                 <span
@@ -82,7 +111,21 @@
                       formSubmitted)
                   "
                 >
-                  Phone Number is required
+                  <span
+                    *ngIf="
+                      contactUsForm.form.controls.contact_phone?.errors
+                        ?.required
+                    "
+                  >
+                    Please enter the phone number
+                  </span>
+                  <span
+                    *ngIf="
+                      contactUsForm.form.controls.contact_phone?.errors?.pattern
+                    "
+                  >
+                    Phone Number is invalid
+                  </span>
                 </span>
               </div>
             </div>
@@ -96,6 +139,7 @@
                 placeholder="Your Message..."
                 ngModel
                 required
+                [pattern]="fieldPattern"
               ></textarea>
               <div class="text-danger mb-5 mt-2 ml-2">
                 <span
@@ -106,7 +150,22 @@
                       formSubmitted)
                   "
                 >
-                  Message is required
+                  <span
+                    *ngIf="
+                      contactUsForm.form.controls.contact_message?.errors
+                        ?.required
+                    "
+                  >
+                    Please enter the message
+                  </span>
+                  <span
+                    *ngIf="
+                      contactUsForm.form.controls.contact_message?.errors
+                        ?.pattern
+                    "
+                  >
+                    Message is invalid
+                  </span>
                 </span>
               </div>
             </div>

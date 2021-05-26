@@ -25,6 +25,7 @@ import { RegisterComponent } from './register/register.component';
 import { DialogComponent } from './register/dialog/dialog.component';
 import { DialogPassengerComponent } from './register/dialog-passenger/dialog-passenger.component';
 import { TermConditionComponent } from './term-condition/term-condition.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { TermConditionComponent } from './term-condition/term-condition.componen
     DialogComponent,
     DialogPassengerComponent,
     TermConditionComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
