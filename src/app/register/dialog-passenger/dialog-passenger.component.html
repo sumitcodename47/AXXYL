@@ -4,10 +4,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Create an Account as Passanger</h4>
-        <button type="button" class="close">&times;</button>
+        <span class="close-cust" (click)="modal.dismiss()"> &times; </span>
       </div>
       <div class="modal-body">
-        <form>
+        <form novalidate #passengerForm="ngForm">
+          <input hidden="true" #focusInputPassenger />
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -15,9 +16,38 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="SFname"
+                  id="DFname"
                   placeholder="Enter First Name"
+                  ngModel
+                  required
+                  name="DFname"
+                  [pattern]="fieldPattern"
                 />
+                <div class="text-danger mt-1 ml-2">
+                  <span
+                    *ngIf="
+                      passengerForm.form.controls.DFname?.invalid &&
+                      (passengerForm.form.controls.DFname?.dirty ||
+                        passengerForm.form.controls.DFname?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.DFname?.errors?.required
+                      "
+                    >
+                      Please Enter first name
+                    </span>
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.DFname?.errors?.pattern
+                      "
+                    >
+                      Please Enter valid first name
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -26,9 +56,38 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="SLname"
+                  id="DLname"
                   placeholder="Enter Last Name"
+                  ngModel
+                  required
+                  name="DLname"
+                  [pattern]="fieldPattern"
                 />
+                <div class="text-danger mt-1 ml-2">
+                  <span
+                    *ngIf="
+                      passengerForm.form.controls.DLname?.invalid &&
+                      (passengerForm.form.controls.DLname?.dirty ||
+                        passengerForm.form.controls.DLname?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.DLname?.errors?.required
+                      "
+                    >
+                      Please Enter last name
+                    </span>
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.DLname?.errors?.pattern
+                      "
+                    >
+                      Please Enter valid last name
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -37,9 +96,38 @@
                 <input
                   type="email"
                   class="form-control"
-                  id="Semail"
+                  id="Demail"
                   placeholder="Enter Enter email"
+                  ngModel
+                  required
+                  name="Demail"
+                  [pattern]="emailPattern"
                 />
+                <div class="text-danger mt-1 ml-2">
+                  <span
+                    *ngIf="
+                      passengerForm.form.controls.Demail?.invalid &&
+                      (passengerForm.form.controls.Demail?.dirty ||
+                        passengerForm.form.controls.Demail?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.Demail?.errors?.required
+                      "
+                    >
+                      Please Enter the email
+                    </span>
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.Demail?.errors?.pattern
+                      "
+                    >
+                      Please Enter valid email
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -48,9 +136,77 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="Sphone"
+                  id="Dphone"
                   placeholder="Enter Phone Number"
+                  ngModel
+                  required
+                  name="Dphone"
+                  pattern="[0-9]"
                 />
+                <div class="text-danger mt-1 ml-2">
+                  <span
+                    *ngIf="
+                      passengerForm.form.controls.Dphone?.invalid &&
+                      (passengerForm.form.controls.Dphone?.dirty ||
+                        passengerForm.form.controls.Dphone?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.Dphone?.errors?.required
+                      "
+                    >
+                      Please Enter the phone number
+                    </span>
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.Dphone?.errors?.pattern
+                      "
+                    >
+                      Phone number is invalid
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="Dpassword"
+                  placeholder="Enter Confirm Password"
+                  ngModel
+                  required
+                  name="Dpassword"
+                />
+                <div class="text-danger mt-1 ml-2">
+                  <span
+                    *ngIf="
+                      passengerForm.form.controls.Dpassword?.invalid &&
+                      (passengerForm.form.controls.Dpassword?.dirty ||
+                        passengerForm.form.controls.Dpassword?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.Dpassword?.errors?.required
+                      "
+                    >
+                      Please Enter the password
+                    </span>
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.Dpassword?.errors?.pattern
+                      "
+                    >
+                      Password is invalid
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -59,37 +215,86 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="Spassword"
-                  placeholder="Enter Confirm Password"
-                />
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="SCpassword"
+                  id="DCpassword"
                   placeholder="Enter Password"
+                  ngModel
+                  required
+                  name="DCpassword"
                 />
+                <div class="text-danger mt-1 ml-2">
+                  <span
+                    *ngIf="
+                      (passengerForm.form.controls.DCpassword?.dirty ||
+                        passengerForm.form.controls.DCpassword?.touched) &&
+                      passengerForm.form.controls.DCpassword.value &&
+                      checkPassword(
+                        passengerForm.form.controls.DCpassword.value,
+                        passengerForm.form.controls.Dpassword.value
+                      )
+                    "
+                  >
+                    Password and Confirm Password are not matching
+                  </span>
+                  <span
+                    *ngIf="
+                      passengerForm.form.controls.DCpassword?.invalid &&
+                      (passengerForm.form.controls.DCpassword?.dirty ||
+                        passengerForm.form.controls.DCpassword?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.DCpassword?.errors?.required
+                      "
+                    >
+                      Please Enter the confirm password
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
-                <input type="checkbox" id="sCHECKBOX" class="form-control1" />
+                <input
+                  type="checkbox"
+                  id="sCHECKBOX"
+                  class="form-control1"
+                  name="sCHECKBOX"
+                  required
+                />
                 You agree to our
-                <a href="/pages/termandcondition">Terms & Conditions</a>,
-                <a href="/pages/privacypolicy" traget="_blank">Privacy Policy</a
+                <span (click)="goTo('/pages/termandcondition')"
+                  >Terms & Conditions </span
+                >,
+                <span (click)="goTo('/pages/privacypolicy')"
+                  >Privacy Policy</span
                 >.
+                <div class="text-danger mt-1 ml-2">
+                  <span
+                    *ngIf="
+                      passengerForm.form.controls.sCHECKBOX?.invalid &&
+                      (passengerForm.form.controls.sCHECKBOX?.dirty ||
+                        passengerForm.form.controls.sCHECKBOX?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        passengerForm.form.controls.sCHECKBOX?.errors?.required
+                      "
+                    >
+                      Please agree this policy
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-12">
               <button
                 type="button"
-                onclick="simpleregistration();"
-                class="btn btn-primary"
+                (click)="simpleregistration(passengerForm)"
+                class="btn btn-primary ml-3"
               >
                 Sign up Now!
               </button>

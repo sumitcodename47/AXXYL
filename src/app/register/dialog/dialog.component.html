@@ -8,6 +8,7 @@
       </div>
       <div class="modal-body">
         <form novalidate #driverForm="ngForm">
+          <input hidden="true" #focusInputDriver />
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -20,9 +21,9 @@
                   name="DFname"
                   ngModel
                   required
+                  [pattern]="fieldPattern"
                 />
-
-                <div class="text-danger mb-5 mt-2 ml-2">
+                <div class="text-danger ml-2">
                   <span
                     *ngIf="
                       driverForm.form.controls.DFname?.invalid &&
@@ -53,7 +54,32 @@
                   class="form-control"
                   id="DLname"
                   placeholder="Enter Last Name"
+                  name="DLname"
+                  ngModel
+                  required
+                  [pattern]="fieldPattern"
                 />
+                <div class="text-danger ml-2">
+                  <span
+                    *ngIf="
+                      driverForm.form.controls.DLname?.invalid &&
+                      (driverForm.form.controls.DLname?.dirty ||
+                        driverForm.form.controls.DLname?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="driverForm.form.controls.DLname?.errors?.required"
+                    >
+                      Please Enter the last name
+                    </span>
+                    <span
+                      *ngIf="driverForm.form.controls.DLname?.errors?.pattern"
+                    >
+                      Last Name is invalid
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -64,7 +90,32 @@
                   class="form-control"
                   id="Demail"
                   placeholder="Enter Enter email"
+                  name="Demail"
+                  ngModel
+                  required
+                  [pattern]="emailPattern"
                 />
+                <div class="text-danger ml-2">
+                  <span
+                    *ngIf="
+                      driverForm.form.controls.Demail?.invalid &&
+                      (driverForm.form.controls.Demail?.dirty ||
+                        driverForm.form.controls.Demail?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="driverForm.form.controls.Demail?.errors?.required"
+                    >
+                      Please Enter the email
+                    </span>
+                    <span
+                      *ngIf="driverForm.form.controls.Demail?.errors?.pattern"
+                    >
+                      Email is invalid
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -75,7 +126,32 @@
                   class="form-control"
                   id="Dphone"
                   placeholder="Enter Phone Number"
+                  name="Dphone"
+                  ngModel
+                  required
+                  [pattern]="fieldPattern"
                 />
+                <div class="text-danger ml-2">
+                  <span
+                    *ngIf="
+                      driverForm.form.controls.Dphone?.invalid &&
+                      (driverForm.form.controls.Dphone?.dirty ||
+                        driverForm.form.controls.Dphone?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="driverForm.form.controls.Dphone?.errors?.required"
+                    >
+                      Please Enter the phone number
+                    </span>
+                    <span
+                      *ngIf="driverForm.form.controls.Dphone?.errors?.pattern"
+                    >
+                      Phone number is invalid
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -85,8 +161,37 @@
                   type="password"
                   class="form-control"
                   id="Dpassword"
-                  placeholder="Enter Confirm Password"
+                  placeholder="Enter Password"
+                  name="Dpassword"
+                  ngModel
+                  required
+                  [pattern]="fieldPattern"
                 />
+                <div class="text-danger ml-2">
+                  <span
+                    *ngIf="
+                      driverForm.form.controls.Dpassword?.invalid &&
+                      (driverForm.form.controls.Dpassword?.dirty ||
+                        driverForm.form.controls.Dpassword?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        driverForm.form.controls.Dpassword?.errors?.required
+                      "
+                    >
+                      Please Enter the password
+                    </span>
+                    <span
+                      *ngIf="
+                        driverForm.form.controls.Dpassword?.errors?.pattern
+                      "
+                    >
+                      Password is invalid
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -97,8 +202,49 @@
                   type="password"
                   class="form-control"
                   id="DCpassword"
-                  placeholder="Enter Password"
+                  placeholder="Enter Confirm Password"
+                  name="DCpassword"
+                  ngModel
+                  required
+                  [pattern]="fieldPattern"
                 />
+                <div class="text-danger ml-2">
+                  <span
+                    *ngIf="
+                      driverForm.form.controls.DCpassword?.invalid &&
+                      (driverForm.form.controls.DCpassword?.dirty ||
+                        driverForm.form.controls.DCpassword?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        driverForm.form.controls.DCpassword?.errors?.required
+                      "
+                    >
+                      Please Enter the confirm password
+                    </span>
+                    <span
+                      *ngIf="
+                        driverForm.form.controls.DCpassword?.errors?.pattern
+                      "
+                    >
+                      Confirm password is invalid
+                    </span>
+                  </span>
+                  <span
+                    *ngIf="
+                      driverForm.form.controls.DCpassword?.touched &&
+                      driverForm.form.controls.DCpassword?.value &&
+                      checkPassword(
+                        driverForm.form.controls.DCpassword.value,
+                        driverForm.form.controls.Dpassword.value
+                      )
+                    "
+                  >
+                    Password and Confirm Password are not matching
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -109,42 +255,105 @@
                   class="form-control"
                   id="VehicleNumber"
                   placeholder="Enter Vehicle Number"
+                  name="VehicleNumber"
+                  ngModel
+                  required
+                  [pattern]="fieldPattern"
                 />
+                <div class="text-danger ml-2">
+                  <span
+                    *ngIf="
+                      driverForm.form.controls.VehicleNumber?.invalid &&
+                      (driverForm.form.controls.VehicleNumber?.dirty ||
+                        driverForm.form.controls.VehicleNumber?.touched ||
+                        formSubmitted)
+                    "
+                  >
+                    <span
+                      *ngIf="
+                        driverForm.form.controls.VehicleNumber?.errors?.required
+                      "
+                    >
+                      Please Enter the vehicle number
+                    </span>
+                    <span
+                      *ngIf="
+                        driverForm.form.controls.VehicleNumber?.errors?.pattern
+                      "
+                    >
+                      Vehicle number is invalid
+                    </span>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="Vehicle">Select Car</label>
 
-                <div class="input select">
-                  <select
-                    name="data[category_id]"
-                    id="car_type"
-                    class="form-control"
+                <select
+                  id="car_type"
+                  class="form-control"
+                  ngModel
+                  name="car_type"
+                  required
+                >
+                  <option value="">Select Car Type</option>
+                  <option value="22">AXS</option>
+                  <option value="23">AXM</option>
+                  <option value="24">AXL</option>
+                  <option value="25">AXC</option>
+                </select>
+                <div class="text-danger ml-2">
+                  <span
+                    *ngIf="
+                      formSubmitted &&
+                      (driverForm.form.controls.car_type?.invalid ||
+                        driverForm.form.controls.car_type?.errors?.required)
+                    "
                   >
-                    <option value="">select Car Type</option>
-                    <option value="22">AXS</option>
-                    <option value="23">AXM</option>
-                    <option value="24">AXL</option>
-                    <option value="25">AXC</option>
-                  </select>
+                    Please Select car type
+                  </span>
                 </div>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
-                <input type="checkbox" class="form-control1" id="dCHECKBOX" />
+                <input
+                  type="checkbox"
+                  class="form-control1"
+                  id="dCHECKBOX"
+                  name="dCHECKBOX"
+                  required
+                  ngModel
+                />
+
                 You agree to our
-                <a href="/pages/termandcondition">Terms & Conditions</a>,
-                <a href="/pages/privacypolicy" traget="_blank">Privacy Policy</a
+                <span (click)="goTo('/pages/termandcondition')" class="a-cust"
+                  >Terms & Conditions </span
+                >,
+                <span (click)="goTo('/pages/privacypolicy')" class="a-cust"
+                  >Privacy Policy</span
                 >.
+                <div class="text-danger mt-1 ml-2">
+                  <span
+                    *ngIf="
+                      formSubmitted &&
+                      (driverForm.form.controls.dCHECKBOX?.invalid ||
+                        driverForm.form.controls.dCHECKBOX?.errors?.required)
+                    "
+                  >
+                    Please agree this policy
+                  </span>
+                </div>
               </div>
             </div>
+
             <!--<div class="col-md-12">Monthly Fee: $<span id="fee-amunt"></span></div>-->
             <button
               type="button"
-              onclick="driverregistration();"
-              class="btn btn-primary"
+              (click)="driverregistration(driverForm)"
+              class="btn btn-primary ml-3"
             >
               Sign up Now!
             </button>

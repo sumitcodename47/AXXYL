@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 
@@ -7,12 +13,14 @@ import { NgForm } from '@angular/forms';
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.css'],
 })
-export class DialogComponent implements OnInit {
+export class DialogComponent implements OnInit, AfterViewInit {
   formSubmitted = false;
   fieldPattern = new RegExp(/^[^ ]+(?: +[^ ]+)*$/);
   emailPattern = new RegExp(
     /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
   );
+  @ViewChild('focusInputDriver', { static: false })
+  focusInputDriver!: ElementRef;
 
   constructor(public modal: NgbActiveModal) {}
 
@@ -21,11 +29,19 @@ export class DialogComponent implements OnInit {
   goTo(url: any) {
     window.open(url, '_blank');
   }
-  driverregistration() {
+  driverregistration(form: NgForm) {
     this.formSubmitted = true;
+    console.log(form.value);
+    if (form.invalid) {
+      return;
+    }
   }
 
   checkPassword(pwd: any, cpwd: any) {
     return pwd !== cpwd;
+  }
+
+  ngAfterViewInit() {
+    this.focusInputDriver.nativeElement.focus();
   }
 }
