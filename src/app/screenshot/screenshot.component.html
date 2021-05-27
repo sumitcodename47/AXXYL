@@ -1,0 +1,106 @@
+<section class="section-lyla" id="gallery">
+  <div class="container-fluid">
+    <h2 class="section-title white">Screenshot</h2>
+    <p class="section-subtitle white">
+      There are many variations of passages of Lorem Ipsum available, but the
+      majority<br />
+      have suffered alteration, by injected humour, or new randomised words.
+    </p>
+  </div>
+  <div class="mr-4">
+    <p-carousel
+      [value]="slidesStore"
+      [autoplayInterval]="5000"
+      [circular]="true"
+      [showIndicators]="true"
+      [showNavigators]="false"
+      [numVisible]="4"
+      [numScroll]="1"
+      class="w-100"
+    >
+      <ng-template let-slide pTemplate="item" class="ml-5">
+        <div class="product-item">
+          <div class="product-item-content gallery-show">
+            <img [src]="slide.src" width="320px" />
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</section>
+<section class="section-white small-padding-bottom" id="features">
+  <div class="container m-auto">
+    <div class="testim-inner">
+      <p-carousel
+        [value]="testimony"
+        [circular]="false"
+        [showIndicators]="true"
+        [showNavigators]="false"
+        [numVisible]="1"
+        [numScroll]="1"
+        class="w-100"
+      >
+        <ng-template let-slide pTemplate="item">
+          <img [src]="slide.src" />
+          <p>{{ slide.comment }}</p>
+          <h6>
+            {{ slide.name }}<span class="job-text"> - {{ slide.city }}</span>
+          </h6>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</section>
+
+<section class="section-white bottom-shape z-100" id="pricing">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-md-6 wow slideInLeft"
+        data-wow-delay="0.25s"
+        style="
+          visibility: visible;
+          animation-delay: 0.5s;
+          animation-name: slideInLeft;
+        "
+      >
+        <img src="./assets/benefits.png" class="width-100" alt="pic" />
+      </div>
+      <div class="col-md-6 padding-top-20">
+        <h3>Get ready to discover all the benefits and secrets</h3>
+        <p>
+          AXXYL is a share ride service that provides the driver with total
+          control over there earnings with a 100% fare earned from each ride.
+          This provides a quality service based upon the driver and their
+          customer service they provide to the customer.
+        </p>
+        <p>
+          While providing great customer service And 100% fare earning to the
+          driver AXXYL will deliver the best quality lower fare than the leading
+          competitors.
+        </p>
+
+        <p>
+          <strong>Available Cars:</strong><br />
+          Axxyl will have all sorts of vehicles to suit your needs, including
+          vehicles to accomedate persons with a wheel chair.
+        </p>
+        <!--<p>Velis demo enim ipsam voluptatem quia voluptas sit aspernatur netsum lorem fugit, sed quia magni dolores eos qui ratione sequi nesciunt neque et poris ratione sequi enim quia tempor magni.</p>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum lorem fugit, sed quia magni dolores eos qui ratione sequi.</p>
+        <ul class="benefits">
+          <li><i class="fa fa-check"></i> Ni Hidden Charges</li>
+          <li><i class="fa fa-check"></i> 100% Safe travel with insureance.</li>
+          <li><i class="fa fa-check"></i> Top rated & verified drivers</li>
+          <li><i class="fa fa-check"></i> No calcellation charges</li>
+        </ul>-->
+        <a href="#" class=""
+          ><img
+            src="./assets/images.png"
+            width="200"
+            style="margin-right: 20px"
+        /></a>
+        <a href="#" class=""><img src="./assets/google.png" width="200" /></a>
+      </div>
+    </div>
+  </div>
+</section>
