@@ -37,6 +37,17 @@ export class DialogPassengerComponent implements OnInit, AfterViewInit {
     if (form.invalid) {
       return;
     }
+
+    let value = form.value;
+    let postBody = {
+      fname: value.DFname,
+      lname: value.DLname,
+      emailId: value.Demail,
+      phone: value.Dphone,
+      password: value.Dpassword,
+      category_id: value.car_type,
+      car_number: value.VehicleNumber,
+    };
   }
 
   checkPassword(pwd: any, cpwd: any) {

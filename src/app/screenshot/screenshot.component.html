@@ -1,5 +1,5 @@
 <section class="section-lyla" id="gallery">
-  <div class="container-fluid">
+  <div class="container-fluid text-center">
     <h2 class="section-title white">Screenshot</h2>
     <p class="section-subtitle white">
       There are many variations of passages of Lorem Ipsum available, but the
@@ -8,7 +8,22 @@
     </p>
   </div>
   <div class="mr-4">
-    <p-carousel
+    <owl-carousel-o [options]="customOptions">
+      <ng-container
+        *ngFor="let slide of slidesStore"
+        style="width: 307.25px; margin-right: 40px"
+      >
+        <ng-template carouselSlide [id]="slide.title">
+          <img
+            [src]="slide.src"
+            [alt]="slide.alt"
+            [title]="slide.title"
+            class="gallery-show"
+          />
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+    <!-- <p-carousel
       [value]="slidesStore"
       [autoplayInterval]="5000"
       [circular]="true"
@@ -25,13 +40,32 @@
           </div>
         </div>
       </ng-template>
-    </p-carousel>
+    </p-carousel> -->
   </div>
 </section>
 <section class="section-white small-padding-bottom" id="features">
   <div class="container m-auto">
     <div class="testim-inner">
-      <p-carousel
+      <owl-carousel-o [options]="customOptionsTest">
+        <ng-container
+          *ngFor="let slide of testimony"
+          style="width: 307.25px; margin-right: 40px"
+        >
+          <ng-template carouselSlide [id]="slide.title">
+            <img
+              [src]="slide.src"
+              [alt]="slide.name"
+              [title]="slide.title"
+              class="gallery-show"
+            />
+            <p>{{ slide.comment }}</p>
+            <h6>
+              {{ slide.name }}<span class="job-text"> - {{ slide.city }}</span>
+            </h6>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+      <!-- <p-carousel
         [value]="testimony"
         [circular]="false"
         [showIndicators]="true"
@@ -47,7 +81,7 @@
             {{ slide.name }}<span class="job-text"> - {{ slide.city }}</span>
           </h6>
         </ng-template>
-      </p-carousel>
+      </p-carousel> -->
     </div>
   </div>
 </section>
@@ -82,14 +116,6 @@
           Axxyl will have all sorts of vehicles to suit your needs, including
           vehicles to accomedate persons with a wheel chair.
         </p>
-        <!--<p>Velis demo enim ipsam voluptatem quia voluptas sit aspernatur netsum lorem fugit, sed quia magni dolores eos qui ratione sequi nesciunt neque et poris ratione sequi enim quia tempor magni.</p>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum lorem fugit, sed quia magni dolores eos qui ratione sequi.</p>
-        <ul class="benefits">
-          <li><i class="fa fa-check"></i> Ni Hidden Charges</li>
-          <li><i class="fa fa-check"></i> 100% Safe travel with insureance.</li>
-          <li><i class="fa fa-check"></i> Top rated & verified drivers</li>
-          <li><i class="fa fa-check"></i> No calcellation charges</li>
-        </ul>-->
         <a href="#" class=""
           ><img
             src="./assets/images.png"
