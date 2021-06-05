@@ -359,6 +359,18 @@
             >
               Sign up Now!
             </button>
+            <span
+              *ngIf="successMessageFlag"
+              class="text-success pl-3 font-weight-bold"
+              [innerHTML]="successMessage"
+            >
+            </span>
+            <span
+              *ngIf="errorMessageFlag"
+              class="text-danger pl-3 font-weight-bold"
+              [innerHTML]="errorMessage"
+            >
+            </span>
             <span style="margin-left: 10px" id="DMES"></span>
           </div>
         </form>

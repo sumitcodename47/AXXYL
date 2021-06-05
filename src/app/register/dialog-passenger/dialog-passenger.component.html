@@ -141,7 +141,7 @@
                   ngModel
                   required
                   name="Dphone"
-                  pattern="[0-9]"
+                  pattern="[0-9]+"
                 />
                 <div class="text-danger mt-1 ml-2">
                   <span
@@ -298,6 +298,18 @@
               >
                 Sign up Now!
               </button>
+              <span
+                *ngIf="successMessageFlag"
+                class="text-success pl-3 font-weight-bold"
+                [innerHTML]="successMessage"
+              >
+              </span>
+              <span
+                *ngIf="errorMessageFlag"
+                class="text-danger pl-3 font-weight-bold"
+                [innerHTML]="errorMessage"
+              >
+              </span>
               <span style="margin-left: 10px" id="SMES"></span>
             </div>
           </div>

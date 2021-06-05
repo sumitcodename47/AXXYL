@@ -142,7 +142,7 @@
                 required
                 [pattern]="fieldPattern"
               ></textarea>
-              <div class="text-danger mb-5 mt-2 ml-2">
+              <div class="text-danger mb-5 ml-2">
                 <span
                   *ngIf="
                     contactUsForm.form.controls.contact_message?.invalid &&
@@ -179,6 +179,18 @@
               >
                 Send Message
               </button>
+              <span
+                *ngIf="successMessageFlag"
+                class="text-success pl-3 pt-2 font-weight-bold"
+                [innerHTML]="successMessage"
+              >
+              </span>
+              <span
+                *ngIf="errorMessageFlag"
+                class="text-danger pl-3 font-weight-bold"
+                [innerHTML]="errorMessage"
+              >
+              </span>
             </div>
             <span style="margin-left: 10px" id="MES"></span>
           </div>

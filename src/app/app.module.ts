@@ -6,6 +6,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+
 import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
@@ -24,6 +26,8 @@ import { DialogComponent } from './register/dialog/dialog.component';
 import { DialogPassengerComponent } from './register/dialog-passenger/dialog-passenger.component';
 import { TermConditionComponent } from './term-condition/term-condition.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+
+import { RegisterService } from './services/register.service';
 
 @NgModule({
   declarations: [
@@ -54,8 +58,9 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [RegisterService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

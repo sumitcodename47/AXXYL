@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-dialog',
@@ -21,8 +22,15 @@ export class DialogComponent implements OnInit, AfterViewInit {
   );
   @ViewChild('focusInputDriver', { static: false })
   focusInputDriver!: ElementRef;
+  successMessage: string = '';
+  errorMessage: string = '';
+  successMessageFlag: boolean = false;
+  errorMessageFlag: boolean = false;
 
-  constructor(public modal: NgbActiveModal) {}
+  constructor(
+    public modal: NgbActiveModal,
+    private registerService: RegisterService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -31,7 +39,6 @@ export class DialogComponent implements OnInit, AfterViewInit {
   }
   driverregistration(form: NgForm) {
     this.formSubmitted = true;
-    console.log(form.value);
     if (form.invalid) {
       return;
     }
@@ -45,7 +52,33 @@ export class DialogComponent implements OnInit, AfterViewInit {
       category_id: value.car_type,
       car_number: value.VehicleNumber,
     };
-    console.log(postBody);
+    this.registerService.registerDriver(postBody).subscribe(
+      (data) => {
+        if (data.status == 'Success') {
+          this.successMessageFlag = true;
+          this.successMessage = data.msg;
+          setTimeout(() => {
+            this.successMessageFlag = false;
+            this.successMessage = '';
+          }, 8000);
+        } else if (data.status == 'Fail') {
+          this.errorMessageFlag = true;
+          this.errorMessage = data.msg;
+          setTimeout(() => {
+            this.errorMessageFlag = false;
+            this.errorMessage = '';
+          }, 8000);
+        }
+      },
+      (error) => {
+        this.errorMessageFlag = true;
+        this.errorMessage = 'Error occurred. Please try again.';
+        setTimeout(() => {
+          this.errorMessageFlag = false;
+          this.errorMessage = '';
+        }, 8000);
+      }
+    );
   }
 
   checkPassword(pwd: any, cpwd: any) {
