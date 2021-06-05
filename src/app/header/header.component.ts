@@ -6,6 +6,9 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DialogPassengerComponent } from '../register/dialog-passenger/dialog-passenger.component';
+import { DialogComponent } from '../register/dialog/dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +18,7 @@ import {
 export class HeaderComponent implements OnInit, AfterViewInit {
   public isMenuCollapsed = true;
   @ViewChild('nav', { static: false }) nav!: ElementRef;
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private modalService: NgbModal) {}
 
   ngOnInit(): void {}
   ngAfterViewInit() {
@@ -30,5 +33,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         }
       });
     }
+  }
+
+  openDriver() {
+    const modalRef = this.modalService.open(DialogComponent, { size: 'xl' });
+  }
+
+  openPassenger() {
+    const modalRef = this.modalService.open(DialogPassengerComponent, {
+      size: 'xl',
+    });
   }
 }

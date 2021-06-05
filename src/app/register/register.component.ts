@@ -16,13 +16,11 @@ export class RegisterComponent implements OnInit {
 
   openDriver() {
     const modalRef = this.modalService.open(DialogComponent, { size: 'lg' });
-    modalRef.componentInstance.name = 'World';
   }
 
   openPassenger() {
     const modalRef = this.modalService.open(DialogPassengerComponent, {
       size: 'lg',
     });
-    modalRef.componentInstance.name = 'World';
   }
 }

@@ -1,11 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-
+import {
+  animate,
+  keyframes,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Carousel } from 'primeng/carousel';
 
 @Component({
   selector: 'app-screenshot',
   templateUrl: './screenshot.component.html',
   styleUrls: ['./screenshot.component.css'],
+  animations: [
+    trigger('slidAnimation', [
+      transition(':enter', [
+        style({ transform: 'translateX(-100%)' }),
+        animate('800ms ease-in', style({ transform: 'translateX(0%)' })),
+      ]),
+    ]),
+  ],
 })
 export class ScreenshotComponent implements OnInit {
   slidesStore = [
