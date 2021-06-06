@@ -21,22 +21,36 @@
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <!-- dashboard-component -->
-        <li><a href="#">Home</a></li>
+        <li>
+          <a href="#" (click)="isMenuCollapsed = true">Home</a>
+        </li>
         <!-- screenshot component -->
-        <li><a href="#pricing">About</a></li>
+        <li><a href="#pricing" (click)="isMenuCollapsed = true">About</a></li>
         <!-- screenshot component -->
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#gallery" (click)="isMenuCollapsed = true">Gallery</a></li>
         <!-- fees-taxes component -->
-        <li><a href="AXXYL/pages/taxes">FEES AND TAXES</a></li>
+        <li>
+          <a href="AXXYL/pages/taxes" (click)="isMenuCollapsed = true"
+            >FEES AND TAXES</a
+          >
+        </li>
         <!-- amazing-features component -->
-        <li><a href="#feature-new">Features</a></li>
+        <li>
+          <a href="#feature-new" (click)="isMenuCollapsed = true">Features</a>
+        </li>
         <!--  how-it-works component-->
-        <li><a href="#about">How it Works</a></li>
+        <li>
+          <a href="#about" (click)="isMenuCollapsed = true">How it Works</a>
+        </li>
         <!-- constatc-us compoent -->
-        <li><a href="#contact">Contact us</a></li>
+        <li>
+          <a href="#contact" (click)="isMenuCollapsed = true">Contact us</a>
+        </li>
         <!-- register component -->
         <li>
-          <a href="AXXYL/pages/registration"> <span> Register Now </span></a>
+          <a href="AXXYL/pages/registration" (click)="isMenuCollapsed = true">
+            <span> Register Now </span></a
+          >
         </li>
       </ul>
     </div>
@@ -47,7 +61,7 @@
       <a class="top-register" (click)="openDriver()">Driver Registration</a>
     </div>
     <div class="col-6">
-      <a href="#" class="top-register" (click)="openPassenger()"
+      <a class="top-register" (click)="openPassenger()"
         >Passenger Registration</a
       >
     </div>
