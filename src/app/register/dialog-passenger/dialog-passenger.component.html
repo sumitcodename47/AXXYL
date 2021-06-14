@@ -262,6 +262,7 @@
                   class="form-control1"
                   name="sCHECKBOX"
                   required
+                  ngModel
                 />
                 You agree to our
                 <span
@@ -275,19 +276,12 @@
                 <div class="text-danger mt-1 ml-2">
                   <span
                     *ngIf="
-                      passengerForm.form.controls.sCHECKBOX?.invalid &&
-                      (passengerForm.form.controls.sCHECKBOX?.dirty ||
-                        passengerForm.form.controls.sCHECKBOX?.touched ||
-                        formSubmitted)
+                      formSubmitted &&
+                      (passengerForm.form.controls.sCHECKBOX?.invalid ||
+                        passengerForm.form.controls.sCHECKBOX?.errors?.required)
                     "
                   >
-                    <span
-                      *ngIf="
-                        passengerForm.form.controls.sCHECKBOX?.errors?.required
-                      "
-                    >
-                      Please agree this policy
-                    </span>
+                    Please agree this policy
                   </span>
                 </div>
               </div>
