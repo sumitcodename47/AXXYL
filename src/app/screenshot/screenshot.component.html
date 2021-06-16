@@ -19,6 +19,7 @@
             [alt]="slide.alt"
             [title]="slide.title"
             class="gallery-show"
+            loading="lazy"
           />
         </ng-template>
       </ng-container>
@@ -57,6 +58,7 @@
               [alt]="slide.name"
               [title]="slide.title"
               class="gallery-show"
+              loading="lazy"
             />
             <p>{{ slide.comment }}</p>
             <h6>
@@ -95,6 +97,7 @@
           class="width-100"
           alt="pic"
           [@slidAnimation]
+          loading="lazy"
         />
       </div>
       <div class="col-md-6 padding-top-20">
@@ -121,8 +124,11 @@
             src="./assets/images.png"
             width="200"
             style="margin-right: 20px"
+            loading="lazy"
         /></a>
-        <a href="#" class=""><img src="./assets/google.png" width="200" /></a>
+        <a href="#" class=""
+          ><img src="./assets/google.png" width="200" loading="lazy"
+        /></a>
       </div>
     </div>
   </div>
