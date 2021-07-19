@@ -15,7 +15,6 @@ import {
 export class FooterComponent implements OnInit {
   public faFacebookSquare = faFacebookSquare;
   public faTwitterSquare = faTwitterSquare;
-  public faGooglePlusSquare = faGooglePlusSquare;
   public faLinkedin = faLinkedin;
   public faPinterestSquare = faPinterestSquare;
   constructor() {}

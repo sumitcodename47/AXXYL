@@ -56,8 +56,11 @@ export class ScreenshotComponent implements OnInit {
       0: {
         items: 1,
       },
-      400: {
-        items: 1,
+      376: {
+        items: 2,
+
+        autoWidth: true,
+        margin: 0,
       },
       740: {
         items: 1,
