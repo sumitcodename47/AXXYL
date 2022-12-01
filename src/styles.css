@@ -521,7 +521,7 @@ ul.home-benefits {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 ul.home-benefits li {
-  background: url("./assets/icon.png");
+  background: url("assets/icon.png");
   background-repeat: no-repeat;
   padding-left: 40px;
   background-position: left bottom;
