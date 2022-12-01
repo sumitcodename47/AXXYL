@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeesTaxesComponent } from './fees-taxes/fees-taxes.component';
 import { RegisterComponent } from './register/register.component';
@@ -14,19 +13,19 @@ const routes: Routes = [
     component: DashboardComponent,
   },
   {
-    path: 'AXXYL/pages/taxes',
+    path: 'pages/taxes',
     component: FeesTaxesComponent,
   },
   {
-    path: 'AXXYL/pages/registration',
+    path: 'pages/registration',
     component: RegisterComponent,
   },
   {
-    path: 'AXXYL/pages/termandcondition',
+    path: 'pages/termandcondition',
     component: TermConditionComponent,
   },
   {
-    path: 'AXXYL/pages/privacypolicy',
+    path: 'pages/privacypolicy',
     component: PrivacyPolicyComponent,
   },
   {
