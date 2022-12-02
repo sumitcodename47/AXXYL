@@ -28,11 +28,13 @@ import { TermConditionComponent } from './term-condition/term-condition.componen
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 import { RegisterService } from './services/register.service';
+import { Header1Component } from './header1/header1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    Header1Component,
     WelcomeComponent,
     HowItWorksComponent,
     AmazingFeaturesComponent,

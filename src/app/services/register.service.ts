@@ -16,7 +16,7 @@ export class RegisterService {
     Object.keys(data).forEach((key) => {
       formData.append(key, data[key]);
     });
-    let API_URL = `${this.apiUrl}/pages/userregistration`;
+    let API_URL = `${this.apiUrl}/userregistration`;
     return this.http.post(API_URL, formData);
   }
 
@@ -25,7 +25,7 @@ export class RegisterService {
     Object.keys(data).forEach((key) => {
       formData.append(key, data[key]);
     });
-    let API_URL = `${this.apiUrl}/pages/driverregistration`;
+    let API_URL = `${this.apiUrl}/driverregistration`;
     return this.http.post(API_URL, data);
   }
 

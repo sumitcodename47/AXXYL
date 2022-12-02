@@ -13,19 +13,19 @@ const routes: Routes = [
     component: DashboardComponent,
   },
   {
-    path: 'pages/taxes',
+    path: 'taxes',
     component: FeesTaxesComponent,
   },
   {
-    path: 'pages/registration',
+    path: 'registration',
     component: RegisterComponent,
   },
   {
-    path: 'pages/termandcondition',
+    path: 'termandcondition',
     component: TermConditionComponent,
   },
   {
-    path: 'pages/privacypolicy',
+    path: 'privacypolicy',
     component: PrivacyPolicyComponent,
   },
   {
