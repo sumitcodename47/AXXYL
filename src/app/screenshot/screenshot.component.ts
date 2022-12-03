@@ -17,12 +17,11 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class ScreenshotComponent implements OnInit {
   customOptions: OwlOptions = {
+    skip_validateItems: true,
+    autoplay: true,
+    autoplayHoverPause: true,
     loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: false,
     dots: true,
-    items: 2,
     margin: 20,
     center: true,
     navSpeed: 100,
@@ -43,10 +42,10 @@ export class ScreenshotComponent implements OnInit {
     },
   };
   customOptionsTest: OwlOptions = {
+    skip_validateItems: true,
+    autoplay: true,
+    autoplayHoverPause: true,
     loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: false,
     dots: true,
     margin: 20,
     center: true,
@@ -58,7 +57,6 @@ export class ScreenshotComponent implements OnInit {
       },
       376: {
         items: 2,
-
         autoWidth: true,
         margin: 0,
       },
