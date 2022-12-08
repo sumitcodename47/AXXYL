@@ -14,13 +14,7 @@
         style="width: 500px; margin-right: 40px"
       >
         <ng-template carouselSlide [id]="slide.title">
-          <img
-            [src]="slide.src"
-            [alt]="slide.alt"
-            [title]="slide.title"
-            class="gallery-show"
-            loading="lazy"
-          />
+          <img [src]="slide.src" class="gallery-show" loading="lazy" />
         </ng-template>
       </ng-container>
     </owl-carousel-o>
@@ -35,12 +29,7 @@
           style="width: 507px; margin-right: 40px"
         >
           <ng-template carouselSlide [id]="slide.title">
-            <img
-              [src]="slide.src"
-              [alt]="slide.name"
-              [title]="slide.title"
-              class="gallery-show"
-            />
+            <img [src]="slide.src" class="gallery-show" />
             <p>{{ slide.comment }}</p>
             <h6>
               {{ slide.name }}<span class="job-text"> - {{ slide.city }}</span>
